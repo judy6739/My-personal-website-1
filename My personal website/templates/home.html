@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #0056b3;
+            position: relative;
+        }
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .logout-button:hover {
+            background-color: #c82333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: scale(1.02);
+            background: #d9d9d9;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .skills, .experience, .education, .languages, .hobbies, .projects {
+            margin-top: 20px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبا بك في موقعي الشخصي</h1>
+        <p>مرحبًا، {{ username }}! هذه هي صفحتي الرئيسية.</p>
+        <button class="logout-button" onclick="window.location.href='{{ url_for('login') }}'">تسجيل خروج</button>
+    </header>
+    <div class="container">
+        <section>
+            <h2>معلومات شخصية</h2>
+            <p>جودي مصطفى - مبرمج شغوف بخلق تجارب فريدة.</p>
+        </section>
+        <section>
+            <h2>ملخص</h2>
+            <p>مبرمج ذو شغف كبير بتطوير البرمجيات ومهارات في العديد من لغات البرمجة مثل Visual Basic، Python، HTML، CSS، JavaScript، Micro، وBat. أسعى دائمًا لتطوير مهاراتي والانتقال إلى مستويات أعلى في البرمجة والأمن السيبراني.</p>
+        </section>
+        <section class="skills">
+            <h2>المهارات التقنية</h2>
+            <h3>لغات البرمجة:</h3>
+            <ul>
+                <li>Visual Basic</li>
+                <li>C#</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>XML</li>
+                <li>Micro</li>
+                <li>Bat</li>
+            </ul>
+            <h3>الأدوات والتقنيات:</h3>
+            <ul>
+                <li>Visual Studio</li>
+                <li>CodeBlocks</li>
+                <li>قواعد بيانات: Microsoft Access، SQLite</li>
+                <li>تطوير مواقع الويب</li>
+                <li>البرمجة الشيئية (OOP)</li>
+            </ul>
+            <h3>مجالات الخبرة:</h3>
+            <ul>
+                <li>تطوير المواقع</li>
+                <li>الأمن السيبراني</li>
+                <li>الأجهزة (Hardware)</li>
+                <li>البرمجيات (Software)</li>
+                <li>المحاسبة والمالية</li>
+            </ul>
+        </section>
+        <section class="experience">
+            <h2>الخبرات العملية</h2>
+            <ul>
+                <li>مبرمج حر (2023 - حتى الآن)</li>
+                <ul>
+                    <li>تطوير مواقع ويب تعليمية باستخدام HTML وCSS وجافا سكريبت.</li>
+                    <li>إنشاء منصات تعليمية تركز على الأمن السيبراني.</li>
+                    <li>بناء تطبيقات باستخدام Visual Basic وPython.</li>
+                    <li>تصميم قواعد بيانات باستخدام SQLite وMicrosoft Access.</li>
+                </ul>
+                <li>مشاريع شخصية:</li>
+                <ul>
+                    <li>منصة جوتكي للتعليم: تطوير منصة متخصصة في تعليم البرمجة والأمن السيبراني.</li>
+                    <li>Memezaoy world: موقع يشبه إنستغرام يحتوي على منشورات، تعليقات، ورسائل.</li>
+                </ul>
+            </ul>
+        </section>
+        <section class="projects">
+            <h2>المشاريع</h2>
+            <ul>
+                <li>موقع ألعاب: تطوير منصة ألعاب متنوعة.</li>
+                <li>كاشف زلازل: إنشاء تطبيق لعرض معلومات عن الزلازل.</li>
+                <li>موقع أخبار: موقع يقدم آخر الأخبار والتحديثات.</li>
+                <li>منصة جوتكي: منصة متخصصة في تعليم البرمجة والأمن السيبراني.</li>
+            </ul>
+        </section>
+        <section class="education">
+            <h2>التعليم</h2>
+            <ul>
+                <li>دورات تدريبية:</li>
+                <ul>
+                    <li>تعلم البرمجة بلغة بايثون.</li>
+                    <li>تعلم أساسيات تطوير المواقع باستخدام HTML وCSS.</li>
+                    <li>تطوير الألعاب وبرمجة الويب.</li>
+                    <li>الأمن السيبراني والاختراق الأخلاقي.</li>
+                </ul>
+            </ul>
+        </section>
+        <section class="languages">
+            <h2>اللغات</h2>
+            <ul>
+                <li>العربية: اللغة الأم</li>
+                <li>الكردية: اللغة الأم</li>
+                <li>الإنجليزية: جيد</li>
+            </ul>
+        </section>
+        <section class="hobbies">
+            <h2>الهوايات</h2>
+            <ul>
+                <li>تطوير البرامج والتطبيقات</li>
+                <li>تعلم مهارات جديدة في مجال البرمجة والأمن السيبراني</li>
+                <li>متابعة التطورات التكنولوجية</li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+</body>
+</html>
